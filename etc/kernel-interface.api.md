@@ -119,6 +119,7 @@ export enum LoginState {
     COMPLETED = "COMPLETED",
     // (undocumented)
     LOADING = "LOADING",
+    SIGN_UP = "SIGN_UP",
     // (undocumented)
     SIGNATURE_FAILED = "SIGNATURE_FAILED",
     // (undocumented)
