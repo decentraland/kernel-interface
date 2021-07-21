@@ -67,6 +67,12 @@ export interface KernelLoadingProgress {
 }
 
 // @public (undocumented)
+export interface KernelOpenUrlEvent {
+    // (undocumented)
+    url: string;
+}
+
+// @public (undocumented)
 export type KernelOptions = {
     container: any;
     kernelOptions: {
@@ -82,8 +88,6 @@ export type KernelOptions = {
 // @public (undocumented)
 export interface KernelRendererVisibleEvent {
     // (undocumented)
-    loadingScreen: boolean;
-    // (undocumented)
     visible: boolean;
 }
 
@@ -95,6 +99,7 @@ export type KernelResult = {
     errorObservable: Observable<KernelError>;
     trackingEventObservable: Observable<KernelTrackingEvent>;
     rendererVisibleObservable: Observable<KernelRendererVisibleEvent>;
+    openUrlObservable: Observable<KernelOpenUrlEvent>;
     authenticate(provider: IEthereumProvider, isGuest: boolean): void;
     version: string;
 };

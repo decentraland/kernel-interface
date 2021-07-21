@@ -82,9 +82,15 @@ export interface KernelSignUpEvent {
 /**
  * @public
  */
+export interface KernelOpenUrlEvent {
+  url: string
+}
+
+/**
+ * @public
+ */
 export interface KernelRendererVisibleEvent {
   visible: boolean
-  loadingScreen: boolean
 }
 
 /**
@@ -112,6 +118,7 @@ export type KernelResult = {
   errorObservable: Observable<KernelError>
   trackingEventObservable: Observable<KernelTrackingEvent>
   rendererVisibleObservable: Observable<KernelRendererVisibleEvent>
+  openUrlObservable: Observable<KernelOpenUrlEvent>
   authenticate(provider: IEthereumProvider, isGuest: boolean): void
   version: string
 }
