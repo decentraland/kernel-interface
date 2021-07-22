@@ -98,14 +98,14 @@ export interface KernelRendererVisibleEvent {
  */
 export type KernelOptions = {
   kernelOptions: {
-    version: string
-    baseUrl: string
+    baseUrl?: string
+    urn?: string
     previewMode?: boolean
   }
   rendererOptions: {
     container: any
-    version: string
-    baseUrl: string
+    baseUrl?: string
+    urn?: string
   }
 }
 

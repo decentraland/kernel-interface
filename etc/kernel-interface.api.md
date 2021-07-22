@@ -75,14 +75,14 @@ export interface KernelOpenUrlEvent {
 // @public (undocumented)
 export type KernelOptions = {
     kernelOptions: {
-        version: string;
-        baseUrl: string;
+        baseUrl?: string;
+        urn?: string;
         previewMode?: boolean;
     };
     rendererOptions: {
         container: any;
-        version: string;
-        baseUrl: string;
+        baseUrl?: string;
+        urn?: string;
     };
 };
 
