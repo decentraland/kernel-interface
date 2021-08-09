@@ -1,6 +1,5 @@
 // This interface is the anti corruption layer between kernel and website
 
-import type { Observable } from "mz-observable"
 import { AuthIdentity } from "./dcl-crypto"
 
 export { AuthIdentity }
@@ -99,27 +98,34 @@ export interface KernelRendererVisibleEvent {
 export type KernelOptions = {
   kernelOptions: {
     baseUrl?: string
-    urn?: string
     previewMode?: boolean
+    configurations?: Record<string, string>
   }
   rendererOptions: {
     container: any
     baseUrl?: string
-    urn?: string
   }
 }
 
 /**
  * @public
  */
+export type NamedEvents = {
+  signUp: KernelSignUpEvent
+  accountState: KernelAccountState
+  loadingProgress: KernelLoadingProgress
+  error: KernelError
+  trackingEvent: KernelTrackingEvent
+  rendererVisible: KernelRendererVisibleEvent
+  openUrl: KernelOpenUrlEvent
+}
+
+/**
+ * @public
+ */
 export type KernelResult = {
-  signUpObservable: Observable<KernelSignUpEvent>
-  accountStateObservable: Observable<KernelAccountState>
-  loadingProgressObservable: Observable<KernelLoadingProgress>
-  errorObservable: Observable<KernelError>
-  trackingEventObservable: Observable<KernelTrackingEvent>
-  rendererVisibleObservable: Observable<KernelRendererVisibleEvent>
-  openUrlObservable: Observable<KernelOpenUrlEvent>
+  on<K extends keyof NamedEvents>(eventName: K, cb: (event: NamedEvents) => void): void
+  on(eventName: string, cb: (event: Record<string, any>) => void): void
   authenticate(provider: IEthereumProvider, isGuest: boolean): void
   version: string
 }

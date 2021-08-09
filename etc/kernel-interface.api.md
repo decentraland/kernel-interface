@@ -4,8 +4,6 @@
 
 ```ts
 
-import type { Observable } from 'mz-observable';
-
 // @public (undocumented)
 export type AuthIdentity = {
     ephemeralIdentity: IdentityType;
@@ -76,13 +74,12 @@ export interface KernelOpenUrlEvent {
 export type KernelOptions = {
     kernelOptions: {
         baseUrl?: string;
-        urn?: string;
         previewMode?: boolean;
+        configurations?: Record<string, string>;
     };
     rendererOptions: {
         container: any;
         baseUrl?: string;
-        urn?: string;
     };
 };
 
@@ -94,13 +91,8 @@ export interface KernelRendererVisibleEvent {
 
 // @public (undocumented)
 export type KernelResult = {
-    signUpObservable: Observable<KernelSignUpEvent>;
-    accountStateObservable: Observable<KernelAccountState>;
-    loadingProgressObservable: Observable<KernelLoadingProgress>;
-    errorObservable: Observable<KernelError>;
-    trackingEventObservable: Observable<KernelTrackingEvent>;
-    rendererVisibleObservable: Observable<KernelRendererVisibleEvent>;
-    openUrlObservable: Observable<KernelOpenUrlEvent>;
+    on<K extends keyof NamedEvents>(eventName: K, cb: (event: NamedEvents) => void): void;
+    on(eventName: string, cb: (event: Record<string, any>) => void): void;
     authenticate(provider: IEthereumProvider, isGuest: boolean): void;
     version: string;
 };
@@ -135,6 +127,17 @@ export enum LoginState {
     // (undocumented)
     WAITING_PROVIDER = "WAITING_PROVIDER"
 }
+
+// @public (undocumented)
+export type NamedEvents = {
+    signUp: KernelSignUpEvent;
+    accountState: KernelAccountState;
+    loadingProgress: KernelLoadingProgress;
+    error: KernelError;
+    trackingEvent: KernelTrackingEvent;
+    rendererVisible: KernelRendererVisibleEvent;
+    openUrl: KernelOpenUrlEvent;
+};
 
 
 // Warnings were encountered during analysis:
