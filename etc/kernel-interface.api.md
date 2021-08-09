@@ -91,7 +91,7 @@ export interface KernelRendererVisibleEvent {
 
 // @public (undocumented)
 export type KernelResult = {
-    on<K extends keyof NamedEvents>(eventName: K, cb: (event: NamedEvents) => void): void;
+    on<K extends keyof NamedEvents>(eventName: K, cb: (event: NamedEvents[K]) => void): void;
     on(eventName: string, cb: (event: Record<string, any>) => void): void;
     authenticate(provider: IEthereumProvider, isGuest: boolean): void;
     version: string;
@@ -138,7 +138,6 @@ export type NamedEvents = {
     rendererVisible: KernelRendererVisibleEvent;
     openUrl: KernelOpenUrlEvent;
 };
-
 
 // Warnings were encountered during analysis:
 //

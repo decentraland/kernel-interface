@@ -124,7 +124,7 @@ export type NamedEvents = {
  * @public
  */
 export type KernelResult = {
-  on<K extends keyof NamedEvents>(eventName: K, cb: (event: NamedEvents) => void): void
+  on<K extends keyof NamedEvents>(eventName: K, cb: (event: NamedEvents[K]) => void): void
   on(eventName: string, cb: (event: Record<string, any>) => void): void
   authenticate(provider: IEthereumProvider, isGuest: boolean): void
   version: string
