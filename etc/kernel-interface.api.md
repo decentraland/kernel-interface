@@ -65,6 +65,9 @@ export interface KernelLoadingProgress {
 }
 
 // @public (undocumented)
+export type KernelLogoutEvent = {};
+
+// @public (undocumented)
 export interface KernelOpenUrlEvent {
     // (undocumented)
     url: string;
@@ -137,6 +140,7 @@ export type NamedEvents = {
     trackingEvent: KernelTrackingEvent;
     rendererVisible: KernelRendererVisibleEvent;
     openUrl: KernelOpenUrlEvent;
+    logout: KernelLogoutEvent;
 };
 
 // Warnings were encountered during analysis:

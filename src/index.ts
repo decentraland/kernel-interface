@@ -110,6 +110,11 @@ export type KernelOptions = {
 /**
  * @public
  */
+export type KernelLogoutEvent = {}
+
+/**
+ * @public
+ */
 export type NamedEvents = {
   signUp: KernelSignUpEvent
   accountState: KernelAccountState
@@ -118,6 +123,7 @@ export type NamedEvents = {
   trackingEvent: KernelTrackingEvent
   rendererVisible: KernelRendererVisibleEvent
   openUrl: KernelOpenUrlEvent
+  logout: KernelLogoutEvent
 }
 
 /**
