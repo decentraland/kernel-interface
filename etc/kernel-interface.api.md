@@ -98,6 +98,9 @@ export type KernelResult = {
     on(eventName: string, cb: (event: Record<string, any>) => void): void;
     authenticate(provider: IEthereumProvider, isGuest: boolean): void;
     version: string;
+    hasStoredSession(address: string, networkId: number): Promise<{
+        result: boolean;
+    }>;
 };
 
 // @public (undocumented)

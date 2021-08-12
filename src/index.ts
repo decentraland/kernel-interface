@@ -134,6 +134,11 @@ export type KernelResult = {
   on(eventName: string, cb: (event: Record<string, any>) => void): void
   authenticate(provider: IEthereumProvider, isGuest: boolean): void
   version: string
+  /**
+   * This method is used to know if the kernel has a stored session for
+   * a specific address it is mainly used to perform autologin.
+   */
+  hasStoredSession(address: string, networkId: number): Promise<{ result: boolean }>
 }
 
 /**
