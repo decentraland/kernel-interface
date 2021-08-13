@@ -39,8 +39,18 @@ export interface KernelLoadingProgress {
  * @public
  */
 export enum LoginState {
+  /**
+   * Program not ready.
+   */
   LOADING = "LOADING",
+  /**
+   * Ready to authenticate
+   */
   WAITING_PROVIDER = "WAITING_PROVIDER",
+  /**
+   * Authenticating
+   */
+  AUTHENTICATING = "AUTHENTICATING",
   SIGNATURE_PENDING = "SIGNATURE_PENDING",
   SIGNATURE_FAILED = "SIGNATURE_FAILED",
   /**

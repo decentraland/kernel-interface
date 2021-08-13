@@ -122,9 +122,9 @@ export interface KernelTrackingEvent {
 
 // @public (undocumented)
 export enum LoginState {
+    AUTHENTICATING = "AUTHENTICATING",
     // (undocumented)
     COMPLETED = "COMPLETED",
-    // (undocumented)
     LOADING = "LOADING",
     SIGN_UP = "SIGN_UP",
     // (undocumented)
@@ -133,7 +133,6 @@ export enum LoginState {
     SIGNATURE_PENDING = "SIGNATURE_PENDING",
     // (undocumented)
     WAITING_PROFILE = "WAITING_PROFILE",
-    // (undocumented)
     WAITING_PROVIDER = "WAITING_PROVIDER"
 }
 
