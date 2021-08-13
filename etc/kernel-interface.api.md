@@ -39,6 +39,8 @@ export interface KernelAccountState {
     // (undocumented)
     identity?: DecentralandIdentity;
     // (undocumented)
+    isGuest?: boolean;
+    // (undocumented)
     loginStatus: LoginState;
     // (undocumented)
     network?: string;
@@ -100,6 +102,7 @@ export type KernelResult = {
     version: string;
     hasStoredSession(address: string, networkId: number): Promise<{
         result: boolean;
+        profile: any | null;
     }>;
 };
 
