@@ -149,7 +149,7 @@ export type KernelResult = {
    * This method is used to know if the kernel has a stored session for
    * a specific address it is mainly used to perform autologin.
    */
-  hasStoredSession(address: string, networkId: number): Promise<{ result: boolean, profile: any | null }>
+  hasStoredSession(address: string, networkId: number): Promise<{ result: boolean; profile?: any }>
 }
 
 /**

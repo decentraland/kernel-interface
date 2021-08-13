@@ -102,7 +102,7 @@ export type KernelResult = {
     version: string;
     hasStoredSession(address: string, networkId: number): Promise<{
         result: boolean;
-        profile: any | null;
+        profile?: any;
     }>;
 };
 
