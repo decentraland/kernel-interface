@@ -111,6 +111,7 @@ export type KernelOptions = {
     baseUrl?: string
     previewMode?: boolean
     configurations?: Record<string, string>
+    storage?: Storage
   }
   rendererOptions: {
     container: any
