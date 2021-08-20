@@ -81,7 +81,7 @@ export type KernelOptions = {
         baseUrl?: string;
         previewMode?: boolean;
         configurations?: Record<string, string>;
-        storage?: Storage;
+        persistentStorage: Storage_2;
     };
     rendererOptions: {
         container: any;
@@ -148,6 +148,19 @@ export type NamedEvents = {
     openUrl: KernelOpenUrlEvent;
     logout: KernelLogoutEvent;
 };
+
+// @public (undocumented)
+interface Storage_2 {
+    // (undocumented)
+    [name: string]: any;
+    clear(): void;
+    getItem(key: string): string | null;
+    key(index: number): string | null;
+    readonly length: number;
+    removeItem(key: string): void;
+    setItem(key: string, value: string): void;
+}
+export { Storage_2 as Storage }
 
 // Warnings were encountered during analysis:
 //
