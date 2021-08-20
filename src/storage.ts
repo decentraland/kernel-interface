@@ -3,25 +3,24 @@
  */
 export interface PersistentAsyncStorage {
     /**
-     * Returns the number of key/value pairs currently present in the list associated with the object.
-     */
-    readonly length: Promise<number>;
-    /**
      * Empties the list associated with the object of all key/value pairs, if there are any.
      */
     clear(): Promise<void>;
+
     /**
      * Returns the current value associated with the given key, or null if the given key does not exist in the list associated with the object.
      */
     getItem(key: string): Promise<string | null>;
+
     /**
-     * Returns the name of the nth key in the list, or null if n is greater than or equal to the number of key/value pairs in the object.
+     * Returns the string array of keys
      */
-    key(index: number): Promise<string | null>;
+    keys(): Promise<string[]>;
     /**
      * Removes the key/value pair with the given key from the list associated with the object, if a key/value pair with the given key exists.
      */
     removeItem(key: string): Promise<void>;
+    
     /**
      * Sets the value of the pair identified by key to value, creating a new key/value pair if none existed for key previously.
      *
