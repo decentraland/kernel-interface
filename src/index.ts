@@ -112,7 +112,7 @@ export type KernelOptions = {
     baseUrl?: string
     previewMode?: boolean
     configurations?: Record<string, string>
-    persistentStorage: PersistentAsyncStorage
+    persistentStorage?: PersistentAsyncStorage
   }
   rendererOptions: {
     container: any
