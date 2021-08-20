@@ -81,7 +81,7 @@ export type KernelOptions = {
         baseUrl?: string;
         previewMode?: boolean;
         configurations?: Record<string, string>;
-        persistentStorage: Storage_2;
+        persistentStorage: PersistentAsyncStorage;
     };
     rendererOptions: {
         container: any;
@@ -150,17 +150,14 @@ export type NamedEvents = {
 };
 
 // @public (undocumented)
-interface Storage_2 {
-    // (undocumented)
-    [name: string]: any;
-    clear(): void;
-    getItem(key: string): string | null;
-    key(index: number): string | null;
-    readonly length: number;
-    removeItem(key: string): void;
-    setItem(key: string, value: string): void;
+export interface PersistentAsyncStorage {
+    clear(): Promise<void>;
+    getItem(key: string): Promise<string | null>;
+    key(index: number): Promise<string | null>;
+    readonly length: Promise<number>;
+    removeItem(key: string): Promise<void>;
+    setItem(key: string, value: string): Promise<void>;
 }
-export { Storage_2 as Storage }
 
 // Warnings were encountered during analysis:
 //
