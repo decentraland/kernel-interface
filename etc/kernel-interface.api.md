@@ -81,6 +81,8 @@ export type KernelOptions = {
         baseUrl?: string;
         previewMode?: boolean;
         configurations?: Record<string, string>;
+        persistentStorage?: PersistentAsyncStorage;
+
     };
     rendererOptions: {
         container: any;
@@ -147,6 +149,15 @@ export type NamedEvents = {
     openUrl: KernelOpenUrlEvent;
     logout: KernelLogoutEvent;
 };
+
+// @public (undocumented)
+export interface PersistentAsyncStorage {
+    clear(): Promise<void>;
+    getItem(key: string): Promise<string | null>;
+    keys(): Promise<string[]>;
+    removeItem(key: string): Promise<void>;
+    setItem(key: string, value: string): Promise<void>;
+}
 
 // Warnings were encountered during analysis:
 //

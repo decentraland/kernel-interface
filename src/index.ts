@@ -1,8 +1,9 @@
 // This interface is the anti corruption layer between kernel and website
 
 import { AuthIdentity } from "./dcl-crypto"
+import { PersistentAsyncStorage } from "./storage"
 
-export { AuthIdentity }
+export { AuthIdentity , PersistentAsyncStorage }
 
 /**
  * @public
@@ -111,6 +112,7 @@ export type KernelOptions = {
     baseUrl?: string
     previewMode?: boolean
     configurations?: Record<string, string>
+    persistentStorage?: PersistentAsyncStorage
   }
   rendererOptions: {
     container: any
