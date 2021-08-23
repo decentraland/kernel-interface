@@ -3,7 +3,7 @@
 import { AuthIdentity } from "./dcl-crypto"
 import { PersistentAsyncStorage } from "./storage"
 
-export { AuthIdentity , PersistentAsyncStorage }
+export { AuthIdentity, PersistentAsyncStorage }
 
 /**
  * @public
@@ -127,6 +127,13 @@ export type KernelLogoutEvent = {}
 
 /**
  * @public
+ *
+ * This event is triggered after the kernel shuts down for any reason
+ */
+export type KernelShutdownEvent = {}
+
+/**
+ * @public
  */
 export type NamedEvents = {
   signUp: KernelSignUpEvent
@@ -137,6 +144,7 @@ export type NamedEvents = {
   rendererVisible: KernelRendererVisibleEvent
   openUrl: KernelOpenUrlEvent
   logout: KernelLogoutEvent
+  shutdown: KernelShutdownEvent
 }
 
 /**

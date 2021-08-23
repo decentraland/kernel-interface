@@ -82,7 +82,6 @@ export type KernelOptions = {
         previewMode?: boolean;
         configurations?: Record<string, string>;
         persistentStorage?: PersistentAsyncStorage;
-
     };
     rendererOptions: {
         container: any;
@@ -107,6 +106,9 @@ export type KernelResult = {
         profile?: any;
     }>;
 };
+
+// @public
+export type KernelShutdownEvent = {};
 
 // @public (undocumented)
 export interface KernelSignUpEvent {
@@ -148,6 +150,7 @@ export type NamedEvents = {
     rendererVisible: KernelRendererVisibleEvent;
     openUrl: KernelOpenUrlEvent;
     logout: KernelLogoutEvent;
+    shutdown: KernelShutdownEvent;
 };
 
 // @public (undocumented)
