@@ -48,6 +48,7 @@ export enum LoginState {
    * Ready to authenticate
    */
   WAITING_PROVIDER = "WAITING_PROVIDER",
+  WAITING_RENDERER = "WAITING_RENDERER",
   /**
    * Authenticating
    */

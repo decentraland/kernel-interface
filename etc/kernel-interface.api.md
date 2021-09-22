@@ -137,7 +137,9 @@ export enum LoginState {
     SIGNATURE_PENDING = "SIGNATURE_PENDING",
     // (undocumented)
     WAITING_PROFILE = "WAITING_PROFILE",
-    WAITING_PROVIDER = "WAITING_PROVIDER"
+    WAITING_PROVIDER = "WAITING_PROVIDER",
+    // (undocumented)
+    WAITING_RENDERER = "WAITING_RENDERER"
 }
 
 // @public (undocumented)
