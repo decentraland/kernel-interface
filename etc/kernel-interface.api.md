@@ -55,7 +55,7 @@ export interface KernelError {
     // (undocumented)
     extra?: Record<string, any>;
     // (undocumented)
-    level?: "critical" | "fatal";
+    level?: 'critical' | 'fatal' | 'serious' | 'warning';
 }
 
 // @public (undocumented)
@@ -67,7 +67,7 @@ export interface KernelLoadingProgress {
 }
 
 // @public (undocumented)
-export type KernelLogoutEvent = {};
+export type KernelLogoutEvent = any;
 
 // @public (undocumented)
 export interface KernelOpenUrlEvent {
@@ -108,7 +108,7 @@ export type KernelResult = {
 };
 
 // @public
-export type KernelShutdownEvent = {};
+export type KernelShutdownEvent = any;
 
 // @public (undocumented)
 export interface KernelSignUpEvent {

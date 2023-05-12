@@ -1,7 +1,7 @@
 // This interface is the anti corruption layer between kernel and website
 
-import { AuthIdentity } from "./dcl-crypto"
-import { PersistentAsyncStorage } from "./storage"
+import { AuthIdentity } from './dcl-crypto'
+import { PersistentAsyncStorage } from './storage'
 
 export { AuthIdentity, PersistentAsyncStorage }
 
@@ -24,7 +24,7 @@ export interface KernelTrackingEvent {
 export interface KernelError {
   error: Error
   code?: string
-  level?: "critical" | "fatal"
+  level?: 'critical' | 'fatal' | 'serious' | 'warning'
   extra?: Record<string, any>
 }
 
@@ -43,24 +43,24 @@ export enum LoginState {
   /**
    * Program not ready.
    */
-  LOADING = "LOADING",
+  LOADING = 'LOADING',
   /**
    * Ready to authenticate
    */
-  WAITING_PROVIDER = "WAITING_PROVIDER",
-  WAITING_RENDERER = "WAITING_RENDERER",
+  WAITING_PROVIDER = 'WAITING_PROVIDER',
+  WAITING_RENDERER = 'WAITING_RENDERER',
   /**
    * Authenticating
    */
-  AUTHENTICATING = "AUTHENTICATING",
-  SIGNATURE_PENDING = "SIGNATURE_PENDING",
-  SIGNATURE_FAILED = "SIGNATURE_FAILED",
+  AUTHENTICATING = 'AUTHENTICATING',
+  SIGNATURE_PENDING = 'SIGNATURE_PENDING',
+  SIGNATURE_FAILED = 'SIGNATURE_FAILED',
   /**
    * Creating avatar. Before signing ToS
    */
-  SIGN_UP = "SIGN_UP",
-  WAITING_PROFILE = "WAITING_PROFILE",
-  COMPLETED = "COMPLETED",
+  SIGN_UP = 'SIGN_UP',
+  WAITING_PROFILE = 'WAITING_PROFILE',
+  COMPLETED = 'COMPLETED'
 }
 
 /**
@@ -124,14 +124,14 @@ export type KernelOptions = {
 /**
  * @public
  */
-export type KernelLogoutEvent = {}
+export type KernelLogoutEvent = any
 
 /**
  * @public
  *
  * This event is triggered after the kernel shuts down for any reason
  */
-export type KernelShutdownEvent = {}
+export type KernelShutdownEvent = any
 
 /**
  * @public
