@@ -21,10 +21,15 @@ export interface KernelTrackingEvent {
 /**
  * @public
  */
+export declare type KernelSeverityLevel = 'critical' | 'fatal' | 'serious' | 'warning';
+
+/**
+ * @public
+ */
 export interface KernelError {
   error: Error
   code?: string
-  level?: 'critical' | 'fatal' | 'serious' | 'warning'
+  level?: KernelSeverityLevel
   extra?: Record<string, any>
 }
 

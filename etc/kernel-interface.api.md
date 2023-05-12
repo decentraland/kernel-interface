@@ -55,7 +55,7 @@ export interface KernelError {
     // (undocumented)
     extra?: Record<string, any>;
     // (undocumented)
-    level?: 'critical' | 'fatal' | 'serious' | 'warning';
+    level?: KernelSeverityLevel;
 }
 
 // @public (undocumented)
@@ -106,6 +106,9 @@ export type KernelResult = {
         profile?: any;
     }>;
 };
+
+// @public (undocumented)
+export type KernelSeverityLevel = 'critical' | 'fatal' | 'serious' | 'warning';
 
 // @public
 export type KernelShutdownEvent = any;
